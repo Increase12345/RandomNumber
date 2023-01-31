@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import AVFoundation
 
 struct ContentView: View {
     @State var isOnSettings = false
@@ -65,6 +66,7 @@ struct ContentView: View {
             Button(action: {
                 if numberData.numberTo > numberData.numberFrom {
                     generateNumber()
+                    AudioServicesPlaySystemSound(1324)
                 } else {
                     self.showAlert = true
                 }
